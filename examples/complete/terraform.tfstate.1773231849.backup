@@ -1,0 +1,39 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.3",
+  "serial": 136,
+  "lineage": "6b5ef6ad-620f-0377-d0c5-17680464ef33",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "random_integer",
+      "name": "suffix",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "74705",
+            "keepers": null,
+            "max": 99999,
+            "min": 10000,
+            "result": 74705,
+            "seed": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.ros_complete",
+      "mode": "managed",
+      "type": "alicloud_ros_change_set",
+      "name": "change_set",
+      "provider": "provider[\"registry.terraform.io/aliyun/alicloud\"]",
+      "instances": []
+    }
+  ],
+  "check_results": null
+}

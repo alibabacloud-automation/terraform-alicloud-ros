@@ -1,0 +1,95 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.3",
+  "serial": 135,
+  "lineage": "6b5ef6ad-620f-0377-d0c5-17680464ef33",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "random_integer",
+      "name": "suffix",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "74705",
+            "keepers": null,
+            "max": 99999,
+            "min": 10000,
+            "result": 74705,
+            "seed": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.ros_complete",
+      "mode": "managed",
+      "type": "alicloud_ros_change_set",
+      "name": "change_set",
+      "provider": "provider[\"registry.terraform.io/aliyun/alicloud\"]",
+      "instances": []
+    },
+    {
+      "module": "module.ros_complete",
+      "mode": "managed",
+      "type": "alicloud_ros_stack_group",
+      "name": "stack_group",
+      "provider": "provider[\"registry.terraform.io/aliyun/alicloud\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "account_ids": null,
+            "administration_role_name": "AliyunROSStackGroupAdministrationRole",
+            "auto_deployment": [],
+            "capabilities": null,
+            "description": "Complete example ROS stack group",
+            "execution_role_name": "AliyunROSStackGroupExecutionRole",
+            "id": "example-stack-group-74705",
+            "operation_description": null,
+            "operation_preferences": null,
+            "parameters": [
+              {
+                "parameter_key": "VpcName",
+                "parameter_value": "StackGroupVPC"
+              },
+              {
+                "parameter_key": "InstanceType",
+                "parameter_value": "ecs.g6.large"
+              }
+            ],
+            "permission_model": "SELF_MANAGED",
+            "region_ids": null,
+            "resource_group_id": "rg-acfmzaq3ypaqkdy",
+            "stack_group_id": "9d9f96f0-f70a-48cf-970d-ffa0680b6d15",
+            "stack_group_name": "example-stack-group-74705",
+            "status": "ACTIVE",
+            "tags": {
+              "Environment": "example",
+              "ManagedBy": "Terraform",
+              "Project": "ros-module-complete-test"
+            },
+            "template_body": "{\"Outputs\": {\"VpcNameOutput\": {\"Description\": \"The VPC name\", \"Value\": {\"Ref\": \"VpcName\"}}}, \"Parameters\": {\"VpcName\": {\"Default\": \"ExampleVPC\", \"Type\": \"String\", \"Description\": \"Name of the VPC\"}, \"InstanceType\": {\"Default\": \"ecs.g6.large\", \"Type\": \"String\", \"Description\": \"Instance type for ECS\"}}, \"Description\": \"Complete ROS template with VPC parameter\", \"Resources\": {}, \"ROSTemplateFormatVersion\": \"2015-09-01\"}",
+            "template_id": null,
+            "template_url": null,
+            "template_version": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjMwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "random_integer.suffix"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
